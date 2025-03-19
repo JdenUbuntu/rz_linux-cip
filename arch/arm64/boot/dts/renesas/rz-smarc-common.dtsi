@@ -169,14 +169,14 @@
 	status = "okay";
 
 	ov5640: camera@3c {
-		compatible = "ovti,ov5645";
+		compatible = "ovti,ov5640";
 		reg = <0x3c>;
 		clock-names = "xclk";
 		clocks = <&clk_ext_camera>;
 		clock-frequency = <24000000>;
-		DOVDD-supply = <&ov5645_vdddo_1v8>;
-		AVDD-supply = <&ov5645_vdda_2v8>;
-		DVDD-supply = <&ov5645_vddd_1v5>;
+		DOVDD-supply = <&ov5640_vdddo_1v8>;
+		AVDD-supply = <&ov5640_vdda_2v8>;
+		DVDD-supply = <&ov5640_vddd_1v5>;
 
 		port {
 			ov5640_to_csi: endpoint {
@@ -327,7 +327,7 @@
 			csi2_in: endpoint {
 				clock-lanes = <0>;
 				data-lanes = <1 2>;
-				remote-endpoint = <&ov5645_to_csi>;
+				remote-endpoint = <&ov5640_to_csi>;
 			};
 		};
 	};
